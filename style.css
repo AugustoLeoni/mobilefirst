@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --tt-header: #CBC0D3;
+  --bg-header: #8E9AAF;
+
+  --bg-main: #EFF1FF; 
+  --tx-main: #23053A; 
+
+  --bg-card: #FEEAFA; 
+  --tt-card: #4A4E69; 
+
+  font-size: 62.5%;
+}
+
+header {
+  background-color: var(--bg-header);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 3.2rem 0 2.9rem;
+  position: relative;
+  z-index: -2;
+}
+
+.logo {
+  animation: logo 2s; 
+}
+
+.logo-animation {
+  animation: logo-animation 4s forwards;
+
+  position: absolute;
+  z-index: -1;
+}
+
+h1 {
+  font-family: 'Staatliches';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 3.4rem;
+
+  letter-spacing: 0.05em;
+
+  color: #FFFFFF;
+  
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  
+  background-color: var(--tt-header);
+  padding: .8rem;
+  width: 100%;
+  text-align: center;
+  margin-top: 3.2rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 1.4rem 3.2rem 6rem;
+}
+
+p {
+  font-family: 'Palanquin';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.5rem;
+  text-align: justify;
+
+  color: var(--tx-main);
+
+  margin-bottom: 6.3rem;
+}
+
+.card {
+  position: relative;
+  
+  width: 32rem;
+  animation: downtop 700ms;
+}
+
+.card + .card {
+  margin-top: 3.2rem;
+}
+
+.card-title {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+
+  font-family: 'Staatliches';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3.4rem;
+
+  letter-spacing: 0.05em;
+
+  color: var(--tt-card);
+
+  background: var(--bg-card);
+  border-radius: 2rem;
+  padding: 0 2.3rem;
+
+  animation: topdown 700ms 300ms backwards;
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes logo {
+  0% {
+    scale: 0;
+    rotate: 0deg;
+  }
+
+  100% {
+    scale: 1;
+    rotate:720deg;
+  }
+}
+
+@keyframes logo-animation {
+  0% {
+    scale: 0;
+  }
+
+  100% {
+    scale: .95;
+  }
+}
